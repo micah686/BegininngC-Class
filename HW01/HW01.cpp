@@ -57,6 +57,8 @@ float volCyl(float radius, float height) {
 	return PI * sqr(radius) * height;
 }
 
+
+
 int menu()
 {
 	char menucnt = 0;
@@ -94,6 +96,7 @@ int menu()
 				cout << "the volume of a cylinder is: " << volCyl(2, 5) << endl;
 				menucnt = 0;
 			}
+			
 
 		}
 		else if (menucnt == 'q')
@@ -104,11 +107,11 @@ int menu()
 
 		else if (menucnt == 0){}
 
-		else
+		/*else
 		{
 			cout << "You didn't enter a valid number";
 		}
-		
+		*/
 	}
 
 
@@ -117,44 +120,18 @@ int menu()
 
 
 
-	/*cout << "please select an option:" << endl;
-	cout << "\n 1) Sizes of types \n";
-	cout << "\n 2) Four Fours \n";
-	cout << "\n 3) Volume of a cylinder \n";
-	cout << "\n";
-	cin >> menucnt;
-	cout << "\n";
-	if (menucnt == 1 || menucnt == 2 || menucnt == 3)
-	{
-		if (menucnt ==1)
-		{ 
-			sizes();
-		}
-		else if (menucnt == 2)
-		{
-			fourfours();
-		}
-		else if (menucnt == 3)
-		{
-			cout << "the volume of a cylinder is: " << volCyl(2, 5) << endl;
-		}
-
-	}
-	else
-	{
-		cout << "You didn't enter a valid number";
-	}
-	*/
+	
 	
 
 }
 
 
 int main() {
-	/*const bool T = 1;
+	
+	/*
+	const bool T = 1;
 	const bool F = 0;
-	sizes();
-	fourfours();
+	
 	if(T) {
 		cout <<" it's true!" << endl;
 	}
