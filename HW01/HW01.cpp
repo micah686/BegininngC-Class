@@ -16,35 +16,30 @@ const float PI = 3.14159;
 
 void sizes()
 {
-   cout << "Size of char : " << sizeof(char) << endl;
-   cout << "Size of int : " << sizeof(int) << endl;
+   cout << "Size of char :      " << sizeof(char) << endl;
+   cout << "Size of int :       " << sizeof(int) << endl;
    cout << "Size of short int : " << sizeof(short int) << endl;
-   cout << "Size of long int : " << sizeof(long int) << endl;
-   cout << "Size of float : " << sizeof(float) << endl;
-   cout << "Size of double : " << sizeof(double) << endl;
-   cout << "Size of wchar_t : " << sizeof(wchar_t) << endl;
+   cout << "Size of long int :  " << sizeof(long int) << endl;
+   cout << "Size of float :     " << sizeof(float) << endl;
+   cout << "Size of double :    " << sizeof(double) << endl;
+   cout << "Size of wchar_t :   " << sizeof(wchar_t) << endl;
 }
 
 void fourfours() {
-	cout << "44-44 = " << 44-44 << endl;//0
-	cout << "44/44 = " << 44/44 << endl; //1
-	cout << "4/4 +4/4 = " << 4 / 4 + 4 / 4 << endl;//2
-	cout << "4 - 4/4 = " << 4 - 4 / 4 << endl;//3
-	cout << "4 = " << 4 << endl;//4
-	cout << "4 + 4/4 = " << 4 + 4 / 4 << endl;//5
-	cout << "4 + 4/4 + 4/4 = " << 4 + 4 / 4 + 4 / 4 << endl;//6
-	cout << "4+4 -4/4 = " << 4 + 4 - 4 / 4 << endl;//7
-	cout << "4+4 = " << 4 + 4 << endl;//8
-	cout << "4+4 +4/4 = " << 4 + 4 + 4 / 4 << endl;//9
-	cout << "4+4 +4/4 +4/4 = " << 4 + 4 + 4 / 4 + 4 / 4 << endl;//10
+	cout << "44-44 =           " << 44-44 << endl;//0
+	cout << "44/44 =           " << 44/44 << endl; //1
+	cout << "4/4 +4/4 =        " << 4 / 4 + 4 / 4 << endl;//2
+	cout << "4 - 4/4 =         " << 4 - 4 / 4 << endl;//3
+	cout << "4 =               " << 4 << endl;//4
+	cout << "4 + 4/4 =         " << 4 + 4 / 4 << endl;//5
+	cout << "4 + 4/4 + 4/4 =   " << 4 + 4 / 4 + 4 / 4 << endl;//6
+	cout << "4+4 -4/4 =        " << 4 + 4 - 4 / 4 << endl;//7
+	cout << "4+4 =             " << 4 + 4 << endl;//8
+	cout << "4+4 +4/4 =        " << 4 + 4 + 4 / 4 << endl;//9
+	cout << "4+4 +4/4 +4/4 =   " << 4 + 4 + 4 / 4 + 4 / 4 << endl;//10
 }
 int multiplier(float x, float y) {
-	/*
-		Multiplies two floating point numbers
-		inputs: float x the first number to multiply
-				float y the second number to multiply
-		output: returns a float
-	*/
+	
 	return x*y;
 }
 
@@ -58,6 +53,20 @@ float volCyl(float radius, float height) {
 }
 
 
+void TrueFalse()
+{
+	const bool T = 1;
+	const bool F = 0;
+
+	if (T) {
+		cout << " it's true!" << endl;
+	}
+	else
+	{
+		cout << "this is not true" << endl;
+	}
+}
+
 
 int menu()
 {
@@ -68,74 +77,61 @@ int menu()
 
 
 
-	while (quit == 0)
-	{
+	
 		cout << "please select an option, or press q to quit" << endl;
 		cout << "\n 1) Sizes of types \n";
 		cout << "\n 2) Four Fours \n";
 		cout << "\n 3) Volume of a cylinder \n";
+		cout << "\n 4) True or False \n";
 		cout << "\n";
+		cout << "option selected: ";
 		cin >> menucnt;
 		cout << "\n";
 
 
-		if (menucnt == 1 || menucnt == 2 || menucnt == 3)
-		{
-
-			if (menucnt == 1)
+			if (menucnt == '1')
 			{
 				sizes();
+				cout << "\n\n\n";
+				menu();
 			}
-			else if (menucnt == 2)
+			else if (menucnt == '2')
 			{
 				fourfours();
-				menucnt = 0;
+				cout << "\n\n\n";
+				menu();
 			}
-			else if (menucnt == 3)
+			else if (menucnt == '3')
 			{
 				cout << "the volume of a cylinder is: " << volCyl(2, 5) << endl;
-				menucnt = 0;
+				cout << "\n\n\n";
+				menu();
 			}
-			
+			else if (menucnt == '4')
+			{
+				TrueFalse();
+				cout << "\n\n\n";
+				menu();
+			}
 
-		}
-		else if (menucnt == 'q')
-		{
-			cout<< "quitting...";
-			quit = 1;
-		}
-
-		else if (menucnt == 0){}
-
-		/*else
-		{
+			else if (menucnt == 'q')
+			{
+				cout << "quitting..." << endl;
+				quit = 1;
+			}
+					
+			else
+			{
 			cout << "You didn't enter a valid number";
-		}
-		*/
-	}
-
-
-
-
-
-
-
-	
-	
-
+			cout << "\n\n\n";
+			menu();
+			}
 }
 
 
 int main() {
 	
-	/*
-	const bool T = 1;
-	const bool F = 0;
 	
-	if(T) {
-		cout <<" it's true!" << endl;
-	}
-	cout << "the volume of a cylinder is: " << volCyl(2,5) << endl;*/
 	
 	//Try implementing a menu here...
 	menu();
