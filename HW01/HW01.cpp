@@ -68,6 +68,23 @@ void TrueFalse()
 }
 
 
+int multi() 
+{    
+    int a=0;
+	int b=0;
+	cout<<"number 1: ";
+	cin >>a ;
+	cout << "\n";
+	cout<<"number 2: ";
+	cin  >> b;
+	cout << "\n";
+	cout<<a << " times "<<b<<" is "<<a*b;
+	
+	
+	return a * b;
+}
+
+
 int menu()
 {
 	char menucnt = 0;
@@ -78,11 +95,12 @@ int menu()
 
 
 	
-		cout << "please select an option, or press q to quit" << endl;
+		cout << "Please select an option, or press q to quit" << endl;
 		cout << "\n 1) Sizes of types \n";
 		cout << "\n 2) Four Fours \n";
 		cout << "\n 3) Volume of a cylinder \n";
 		cout << "\n 4) True or False \n";
+		cout << "\n 5) Multiply \n";
 		cout << "\n";
 		cout << "option selected: ";
 		cin >> menucnt;
@@ -110,6 +128,12 @@ int menu()
 			else if (menucnt == '4')
 			{
 				TrueFalse();
+				cout << "\n\n\n";
+				menu();
+			}
+			else if (menucnt == '5')
+			{
+				multi();
 				cout << "\n\n\n";
 				menu();
 			}
