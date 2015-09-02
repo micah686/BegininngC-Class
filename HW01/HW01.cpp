@@ -8,6 +8,7 @@
 */
 #include <iostream>
 #include <string>
+#include <cmath>
 
 
 using namespace std;
@@ -26,17 +27,17 @@ void sizes()
 }
 
 void fourfours() {
-	cout << "44-44 =           " << 44-44 << endl;//0
-	cout << "44/44 =           " << 44/44 << endl; //1
-	cout << "4/4 +4/4 =        " << 4 / 4 + 4 / 4 << endl;//2
-	cout << "4 - 4/4 =         " << 4 - 4 / 4 << endl;//3
-	cout << "4 =               " << 4 << endl;//4
-	cout << "4 + 4/4 =         " << 4 + 4 / 4 << endl;//5
-	cout << "4 + 4/4 + 4/4 =   " << 4 + 4 / 4 + 4 / 4 << endl;//6
-	cout << "4+4 -4/4 =        " << 4 + 4 - 4 / 4 << endl;//7
-	cout << "4+4 =             " << 4 + 4 << endl;//8
-	cout << "4+4 +4/4 =        " << 4 + 4 + 4 / 4 << endl;//9
-	cout << "4+4 +4/4 +4/4 =   " << 4 + 4 + 4 / 4 + 4 / 4 << endl;//10
+	cout << "44-44 =             			   " << 44-44 << endl;//0
+	cout << "44/44 =             			   " << 44/44 << endl; //1
+	cout << "4/4 +4/4 =          			   " << 4 / 4 + 4 / 4 << endl;//2
+	cout << "(sqrt(4) + sqrt(4)) - 4 / 4 =     " << (sqrt(4) + sqrt(4)) - 4 / 4 << endl;//3
+	cout << "4-4 +(sqrt(4)+sqrt(4)) =          " << 4-4 +(sqrt(4)+sqrt(4)) << endl;//4
+	cout << "(sqrt(4) + sqrt(4)) + 4 / 4 =     " << (sqrt(4) + sqrt(4)) + 4 / 4 << endl;//5
+	cout << "(4*4)/4 +sqrt(4) =  			   " << (4*4)/4 +sqrt(4) << endl;//6
+	cout << "4+4 -4/4 =          			   " << 4 + 4 - 4 / 4 << endl;//7
+	cout << "sqrt(4)+sqrt(4)+sqrt(4)+sqrt(4) = " << sqrt(4)+sqrt(4)+sqrt(4)+sqrt(4) << endl;//8
+	cout << "4+4 +4/4 =          			   " << 4 + 4 + 4 / 4 << endl;//9
+	cout << "4 + 4 + (4 / sqrt(4)) =           " << 4 + 4 + (4 / sqrt(4)) << endl;//10
 }
 int multiplier(float x, float y) {
 	
