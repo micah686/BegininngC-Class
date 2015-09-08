@@ -10,18 +10,7 @@
 #include <time.h>
 #include <cstdlib>
 
-using namespace std;
-	/*
-	Write a function called month that takes a number and returns a value between 1 
-	and 31.
-	
-	Remember to document your code!!
-	
-	Examples:
-	month(12) Returns 12
-	month(33) returns 2
-	HINT: You will need an if statement to make this work properly.
-	*/
+using namespace std;	
 	
 
 	void month()
@@ -44,40 +33,7 @@ using namespace std;
 		
 	}
 
-	/*
-	Write a function called 'randBetween'
-	It should take two numbers, high and low.
-	Randbetween should return a random number between the two values.
-	It should handle negative numbers
-	The low number doesn't have to come first
 
-	Hint: 	You will need an IF statement.
-	Hint: 	You will need to figure out how to adjust the
-			output of rand to handle values other than 0 or 1...
-
-	Examples: 
-	randBetween(1,6) == 1
-	randBetween(1,6) == 3
-	randBetween(1,6) == 2
-	randBetween(-4,0) == -4
-	randBetween(42,50) == 49
-	randBetween(42,50) == 45
-	randBetween(7,1) == 3
-	
-	
-	int randBetween(int low, int high) {
-		
-		if(low > high) {
-			int swap = low;
-			low = high;
-			high = swap;
-		}
-		// printf ("low == %d, high == %d\n",low,high);
-		return rand() % (high - low + 1) + low;
-	}
-	
-	
-	*/
 
 	int randBetween() 
 	{		
@@ -96,58 +52,82 @@ using namespace std;
 			low = high;
 			high = swap;
 		}		 
-		cout<<rand() % (high - low + 1) + low<<endl;
+		cout<<rand() % (high - low + 1) + low<<endl; //random mod high-low +1
 		return 0;
 	}
 
-/*
-Write a function named average.
-Average will ask the user for input. 
-Average will then compute the average value of that input.
-Average is defined as the sum of values dived by the number of values.
 
-You will need:
-A loop, a counter, and at least one method of keeping track of the grades.
-
-
-Examples:
-	
-	 You entered 87.87, the current average is: 87.87
-Please enter a grade (-1 to quit): 42.42
-
- You entered 42.42, the current average is: 65.15
-Please enter a grade (-1 to quit): 34
-
- You entered 34.00, the current average is: 54.76
-Please enter a grade (-1 to quit): 99
-
- You entered 99.00, the current average is: 65.82
-Please enter a grade (-1 to quit): 100
-
- You entered 100.00, the current average is: 72.66
-Please enter a grade (-1 to quit): 2
-
- You entered 2.00, the current average is: 60.88
-Please enter a grade (-1 to quit): 1
-
- You entered 1.00, the current average is: 52.33
-Please enter a grade (-1 to quit): 0
-
- You entered 0.00, the current average is: 45.79
-Please enter a grade (-1 to quit): -1
-average grade: 45.79 
-
-	Please enter a grade (-1 to quit): -1
- 	no grades were entered...
-*/
 	float average(){
+		int counter = 0;
+		float grade;
+		float total = 0;
+		
+		while (1) {
+			printf("Enter a grade, or a negative number to quit: ");
+			cin >> grade;
+			if (grade < 0) {
+				break;
+			}
+			counter++;
+			total += grade; //append grade to total
+			printf("\nEntered: %2.2f, Average:: %2.2f\n", grade, total/counter);// print grade and average
+		}
+		
+		if (counter == 0) {
+			printf(" No number was entered \n");
+			return 0;
+		} else {
+			printf("average grade: %2.2f \n", total/counter);//print average
+		}
+		
+		
+		
         return 0;
 	}
+	
+	
+	
+	void menu()
+	{
+		char menucnt =0;
+		cout << "Please select an option, or press q to quit" << endl;
+		cout << "\n 1) Month \n";
+		cout << "\n 2) Rand Between \n";
+		cout << "\n 3) Average Grade \n";
+		cout << "\n";
+		cout << "option selected: ";
+		cin >> menucnt;//takes in input
+		cout << "\n";
+		
+		while(menucnt != 'q')
+		{
+			if (menucnt == '1')//if menucnt equals a certain number
+			{
+				month();
+				cout << "\n\n\n";//print a few newlines
+				menu();//run menu method again
+			}
+			else if (menucnt == '2')
+			{
+				randBetween();
+				cout << "\n\n\n";
+				menu();
+			}
+			else if (menucnt == '3')
+			{
+				average();
+			}
+		}
+		
+		
+	}
+	
 
 	int main()
 	{
-	   // month();
-	   randBetween();
+
+	   menu();//run menu code
+	   
         return 0;
 	}
 
