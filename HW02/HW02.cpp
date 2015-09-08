@@ -8,6 +8,7 @@
 #include <stdio.h>
 #include <iostream>
 #include <time.h>
+#include <cstdlib>
 
 using namespace std;
 	/*
@@ -62,25 +63,42 @@ using namespace std;
 	randBetween(42,50) == 49
 	randBetween(42,50) == 45
 	randBetween(7,1) == 3
+	
+	
+	int randBetween(int low, int high) {
+		
+		if(low > high) {
+			int swap = low;
+			low = high;
+			high = swap;
+		}
+		// printf ("low == %d, high == %d\n",low,high);
+		return rand() % (high - low + 1) + low;
+	}
+	
+	
 	*/
 
-	void randBetween() 
-{    
-    int a=0;
-	int b=0;
-	int high=0;
-	int low=0;
-	cout<<"high: ";
-	cin >>high ;
-	cout << "\n";
-	cout<<"low: ";
-	cin  >> low;
-	cout << "\n";
-	
-	
-	
-	
-}
+	int randBetween() 
+	{		
+		int low =0;
+		int high=0;		
+		cout<<"high: ";
+	    cin >>high ;
+	    cout << "\n";
+	    cout<<"low: ";
+	    cin  >> low;
+	    cout << "\n";
+		
+		if(low > high) 
+		{
+			int swap = low;
+			low = high;
+			high = swap;
+		}		 
+		cout<<rand() % (high - low + 1) + low<<endl;
+		return 0;
+	}
 
 /*
 Write a function named average.
