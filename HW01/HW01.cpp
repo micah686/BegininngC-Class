@@ -13,7 +13,7 @@
 
 using namespace std;
 
-const float PI = 3.14159;
+const float PI = 3.14159; //sets the float PI to 3.14159
 
 void sizes()
 {
@@ -74,12 +74,12 @@ int multi()
     int a=0;
 	int b=0;
 	cout<<"number 1: ";
-	cin >>a ;
+	cin >>a ;//asks for input for number a
 	cout << "\n";
 	cout<<"number 2: ";
-	cin  >> b;
+	cin  >> b; //asks for input for number b
 	cout << "\n";
-	cout<<a << " times "<<b<<" is "<<a*b;
+	cout<<a << " times "<<b<<" is "<<a*b;//prints the output of a times b
 	
 	
 	return a * b;
@@ -88,8 +88,8 @@ int multi()
 
 int menu()
 {
-	char menucnt = 0;
-	int quit = 0;
+	char menucnt = 0; //menu selection counter
+	;
 
 
 
@@ -104,52 +104,52 @@ int menu()
 		cout << "\n 5) Multiply \n";
 		cout << "\n";
 		cout << "option selected: ";
-		cin >> menucnt;
+		cin >> menucnt;//takes in input
 		cout << "\n";
 
 
-			if (menucnt == '1')
+			if (menucnt == '1')//if menucnt equals a certain number
 			{
-				sizes();
-				cout << "\n\n\n";
-				menu();
+				sizes();//run sizes method
+				cout << "\n\n\n";//print a few newlines
+				menu();//run menu method again
 			}
 			else if (menucnt == '2')
 			{
-				fourfours();
+				fourfours();//run fourfours method
 				cout << "\n\n\n";
 				menu();
 			}
 			else if (menucnt == '3')
 			{
-				cout << "the volume of a cylinder is: " << volCyl(2, 5) << endl;
+				cout << "the volume of a cylinder is: " << volCyl(2, 5) << endl;//run volCyl with arguments 2,5 for radius and height
 				cout << "\n\n\n";
 				menu();
 			}
 			else if (menucnt == '4')
 			{
-				TrueFalse();
+				TrueFalse();//run truefalse method
 				cout << "\n\n\n";
 				menu();
 			}
 			else if (menucnt == '5')
 			{
-				multi();
+				multi();//run multi method
 				cout << "\n\n\n";
 				menu();
 			}
 
-			else if (menucnt == 'q')
+			else if (menucnt == 'q')//if menucnt equals the q character
 			{
 				cout << "quitting..." << endl;
-				quit = 1;
+				
 			}
 					
-			else
+			else//if q or a valid number isn't entered
 			{
 			cout << "You didn't enter a valid number";
 			cout << "\n\n\n";
-			menu();
+			menu();//restart menu method
 			}
 }
 
@@ -159,6 +159,6 @@ int main() {
 	
 	
 	//Try implementing a menu here...
-	menu();
+	menu();//run the menu code
 	return 0;
 }
