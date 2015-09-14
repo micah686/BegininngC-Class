@@ -51,7 +51,7 @@ using namespace std;
 	void RPS()
 	{
 		int seedval = randmix();
-		int playerchoice;
+		string playerchoice;
 		srand(seedval);
 		int compchoice = rand()%13;
 		string compchoicestr="";
@@ -72,15 +72,71 @@ using namespace std;
 			compchoicestr = "paper";
 		}
 		//end computer choice code
-		
-		
-		
-		
-		
-		
+		if(arr[3]== "cheat_on")
+		{
+			cout<<"The computer's choice is: "<< compchoicestr<<endl;
+		}
+			
 		cout<<"Please enter rock, paper, or scissors: ";
 		cin>> playerchoice;
 		cout<< "\n"<<endl;
+		
+		if(playerchoice == "rock"|| playerchoice=="scissors"|| playerchoice=="paper")
+		{
+			if(playerchoice==compchoicestr)
+			{
+				cout<<"this was a tie"<<endl;
+				RPS();
+			}
+			/*else
+			{
+				if(playerchoice== "rock" && compchoicestr=="scissors")
+				{
+					cout<<"you win"<<endl;
+					RPS();
+				}
+				else if (playerchoice=="rock" && compchoicestr="paper")
+				{
+					cout<<"you lose"<<endl;
+					RPS();
+				}
+				
+				else if(playerchoice== "scissors" && compchoicestr=="rock")
+				{
+					cout<<"you lose"<<endl;
+					RPS();
+				}
+				else if(playerchoice=="scissors" && compchoicestr=="paper")
+				{
+					cout<<"you win"<<endl;
+					RPS();
+				}
+				
+				else if(playerchoice=="paper" && compchoicestr=="rock")
+				{
+					cout<<"you win"<<endl;
+					RPS();
+				}
+				else if(playerchoice=="paper" && compchoicestr=="scissors")
+				{
+					cout<<"you lose"<<endl;
+					RPS();
+				}
+				
+			}*/
+			
+			
+			
+			
+			
+		}
+		else
+		{
+			cout<<"please enter rock, paper or scissors"<<endl;
+			RPS();
+		}
+		
+		
 	}
 	
 
@@ -107,6 +163,18 @@ void menu()
 			else if (menucnt == "quit")
 			{
 				break;
+			}
+			else if (menucnt== "cheat_on")
+			{
+				arr[3]="cheat_on";
+				cout<<"cheats have been enabled"<<endl;
+				menu();
+			}
+			else if (menucnt == "cheat_off")
+			{
+				arr[3]="cheat_off";
+				cout<<"cheats have been disabled"<<endl;
+				menu();
 			}
 			else
 			{
