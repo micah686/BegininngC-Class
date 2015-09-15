@@ -15,7 +15,7 @@ Assignment: Rock Paper Scissors Project
 using namespace std;
 
 int arr[5];//0=rounds played, 1= victories, 2=defeats, 3=ties, 4=cheats active
-string playername;
+string playername ="";
 
 
 
@@ -48,7 +48,15 @@ int randmix()
 	return seedval;
 }
 
-
+void endgame()
+{
+	int quit;
+	printf("%s , your final score is: \n", playername.c_str());
+	printf("Rounds played: %d \t Victories: %d \t Defeats: %d \t Ties: %d \n", arr[0], arr[1], arr[2], arr[3]);
+	cout << "please try again sometime" << endl;
+	Sleep(800);
+	exit(0);
+}
 
 void RPS()
 {
@@ -56,7 +64,7 @@ void RPS()
 	int seedval = randmix();
 	string playerchoice;
 	srand(seedval);
-	int compchoice = rand() % 13;
+	int compchoice = rand() % 10 +1;
 	string compchoicestr = "";
 	///begin computer choice code
 	if (compchoice == 1 || compchoice == -1 || compchoice == 4 || compchoice == -4 || compchoice == 7 || compchoice == -7 || compchoice == 0)
@@ -91,62 +99,69 @@ void RPS()
 		{
 			if (playerchoice == compchoicestr)
 			{
-				cout << "this was a tie \n" << endl;
+				cout << "this is what happens when an unstoppable force meets an immovable object(tie) \n" << endl;
 				arr[0]++;
 				arr[3]++;
-				cout << "rounds played: " << arr[0] << "\t" << "Victories: " << arr[1] << "\t" << "Defeats: " << arr[2] << "\t" << "Ties: " << arr[3] <<"\n\n" <<endl;
+				printf("%s , your current score is: \n", playername.c_str());
+				printf("Rounds played: %d \t Victories: %d \t Defeats: %d \t Ties: %d \n", arr[0], arr[1], arr[2],arr[3]);
 				RPS();
 			}
 			else
 			{
 				if (playerchoice == "rock" && compchoicestr == "scissors")
 				{
-					cout << "you win" << endl;
+					cout << "an enemies' sword is no match for the stone giant(win)" << endl;
 					arr[0]++;
 					arr[1]++;
-					cout << "rounds played: " << arr[0] << "\t" << "Victories: " << arr[1] << "\t" << "Defeats: " << arr[2] << "\t" << "Ties: " << arr[3] << "\n\n" << endl;
+					printf("%s , your current score is: \n", playername.c_str());
+					printf("Rounds played: %d \t Victories: %d \t Defeats: %d \t Ties: %d \n", arr[0], arr[1], arr[2], arr[3]);
 					RPS();
 				}
 				else if (playerchoice == "rock" && compchoicestr == "paper")
 				{
-					cout << "you lose" << endl;
+					cout << "you were blinded by a sheet and was unable to continue(loss)" << endl;
 					arr[0]++;
 					arr[2]++;
-					cout << "rounds played: " << arr[0] << "\t" << "Victories: " << arr[1] << "\t" << "Defeats: " << arr[2] << "\t" << "Ties: " << arr[3] << "\n\n" << endl;
+					printf("%s , your current score is: \n", playername.c_str());
+					printf("Rounds played: %d \t Victories: %d \t Defeats: %d \t Ties: %d \n", arr[0], arr[1], arr[2], arr[3]);
 					RPS();
 				}
 
 				else if (playerchoice == "scissors" && compchoicestr == "rock")
 				{
-					cout << "you lose" << endl;
+					cout << "your metal sword was no match for the stone giant(loss)" << endl;
 					arr[0]++;
 					arr[2]++;
-					cout << "rounds played: " << arr[0] << "\t" << "Victories: " << arr[1] << "\t" << "Defeats: " << arr[2] << "\t" << "Ties: " << arr[3] << "\n\n" << endl;
+					printf("%s , your current score is: \n", playername.c_str());
+					printf("Rounds played: %d \t Victories: %d \t Defeats: %d \t Ties: %d \n", arr[0], arr[1], arr[2], arr[3]);
 					RPS();
 				}
 				else if (playerchoice == "scissors" && compchoicestr == "paper")
 				{
-					cout << "you win" << endl;
+					cout << "your trusty blade slashed through the sheet and led your way onto victory(win)" << endl;
 					arr[0]++;
 					arr[1]++;
-					cout << "rounds played: " << arr[0] << "\t" << "Victories: " << arr[1] << "\t" << "Defeats: " << arr[2] << "\t" << "Ties: " << arr[3] << "\n\n" << endl;
+					printf("%s , your current score is: \n", playername.c_str());
+					printf("Rounds played: %d \t Victories: %d \t Defeats: %d \t Ties: %d \n", arr[0], arr[1], arr[2], arr[3]);
 					RPS();
 				}
 
 				else if (playerchoice == "paper" && compchoicestr == "rock")
 				{
-					cout << "you win" << endl;
+					cout << "your giant sheet disoriented the stone giant and led you to victory(win)" << endl;
 					arr[0]++;
 					arr[1]++;
-					cout << "rounds played: " << arr[0] << "\t" << "Victories: " << arr[1] << "\t" << "Defeats: " << arr[2] << "\t" << "Ties: " << arr[3] << "\n\n" << endl;
+					printf("%s , your current score is: \n", playername.c_str());
+					printf("Rounds played: %d \t Victories: %d \t Defeats: %d \t Ties: %d \n", arr[0], arr[1], arr[2], arr[3]);
 					RPS();
 				}
 				else if (playerchoice == "paper" && compchoicestr == "scissors")
 				{
-					cout << "you lose" << endl;
+					cout << "the enemies swords were too strong against the large sheet, which brought about your downfall(loss)" << endl;
 					arr[0]++;
 					arr[2]++;
-					cout << "rounds played: " << arr[0] << "\t" << "Victories: " << arr[1] << "\t" << "Defeats: " << arr[2] << "\t" << "Ties: " << arr[3] << "\n\n" << endl;
+					printf("%s , your current score is: \n", playername.c_str());
+					printf("Rounds played: %d \t Victories: %d \t Defeats: %d \t Ties: %d \n", arr[0], arr[1], arr[2], arr[3]);
 					RPS();
 				}
 
@@ -165,9 +180,8 @@ void RPS()
 			RPS();
 		}
 	}
+	endgame();
 	
-	
-
 
 }
 
