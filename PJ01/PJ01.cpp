@@ -14,7 +14,8 @@ Assignment: Rock Paper Scissors Project
 
 using namespace std;
 
-string arr[4];//0=playername,1=rounds played, 2= victories, 3=cheatactive
+int arr[5];//0=rounds played, 1= victories, 2=defeats, 3=ties, 4=cheats active
+string playername;
 
 
 
@@ -60,83 +61,112 @@ void RPS()
 	///begin computer choice code
 	if (compchoice == 1 || compchoice == -1 || compchoice == 4 || compchoice == -4 || compchoice == 7 || compchoice == -7 || compchoice == 0)
 	{
-		cout << "1,4,7,0 choice:" << compchoice << endl;
+		//cout << "1,4,7,0 choice:" << compchoice << endl;
 		compchoicestr = "rock";
 	}
 	else if (compchoice == 2 || compchoice == -2 || compchoice == 5 || compchoice == -5 || compchoice == 8 || compchoice == -8)
 	{
-		cout << "2,5,8 choice:" << compchoice << endl;
+		//cout << "2,5,8 choice:" << compchoice << endl;
 		compchoicestr = "scissors";
 	}
 	else if (compchoice == 3 || compchoice == -3 || compchoice == 6 || compchoice == -6 || compchoice == 9 || compchoice == -9)
 	{
-		cout << "3,6,9 choice:" << compchoice << endl;
+		//cout << "3,6,9 choice:" << compchoice << endl;
 		compchoicestr = "paper";
 	}
 	//end computer choice code
-	if (arr[3] == "cheat_on")
-	{
+	if (arr[5] == 1)
+	{		
 		cout << "The computer's choice is: " << compchoicestr << endl;
 	}
 
-	cout << "Please enter rock, paper, or scissors: ";
-	cin >> playerchoice;
-	cout << "\n" << endl;
-
-	if (playerchoice == "rock" || playerchoice == "scissors" || playerchoice == "paper")
+	
+	while (1)
 	{
-		if (playerchoice == compchoicestr)
+		cout << "Please enter rock, paper, or scissors: ";
+		cin >> playerchoice;
+		cout << "\n" << endl;
+
+		if (playerchoice == "rock" || playerchoice == "scissors" || playerchoice == "paper")
 		{
-			cout << "this was a tie" << endl;
-			RPS();
+			if (playerchoice == compchoicestr)
+			{
+				cout << "this was a tie \n" << endl;
+				arr[0]++;
+				arr[3]++;
+				cout << "rounds played: " << arr[0] << "\t" << "Victories: " << arr[1] << "\t" << "Defeats: " << arr[2] << "\t" << "Ties: " << arr[3] <<"\n\n" <<endl;
+				RPS();
+			}
+			else
+			{
+				if (playerchoice == "rock" && compchoicestr == "scissors")
+				{
+					cout << "you win" << endl;
+					arr[0]++;
+					arr[1]++;
+					cout << "rounds played: " << arr[0] << "\t" << "Victories: " << arr[1] << "\t" << "Defeats: " << arr[2] << "\t" << "Ties: " << arr[3] << "\n\n" << endl;
+					RPS();
+				}
+				else if (playerchoice == "rock" && compchoicestr == "paper")
+				{
+					cout << "you lose" << endl;
+					arr[0]++;
+					arr[2]++;
+					cout << "rounds played: " << arr[0] << "\t" << "Victories: " << arr[1] << "\t" << "Defeats: " << arr[2] << "\t" << "Ties: " << arr[3] << "\n\n" << endl;
+					RPS();
+				}
+
+				else if (playerchoice == "scissors" && compchoicestr == "rock")
+				{
+					cout << "you lose" << endl;
+					arr[0]++;
+					arr[2]++;
+					cout << "rounds played: " << arr[0] << "\t" << "Victories: " << arr[1] << "\t" << "Defeats: " << arr[2] << "\t" << "Ties: " << arr[3] << "\n\n" << endl;
+					RPS();
+				}
+				else if (playerchoice == "scissors" && compchoicestr == "paper")
+				{
+					cout << "you win" << endl;
+					arr[0]++;
+					arr[1]++;
+					cout << "rounds played: " << arr[0] << "\t" << "Victories: " << arr[1] << "\t" << "Defeats: " << arr[2] << "\t" << "Ties: " << arr[3] << "\n\n" << endl;
+					RPS();
+				}
+
+				else if (playerchoice == "paper" && compchoicestr == "rock")
+				{
+					cout << "you win" << endl;
+					arr[0]++;
+					arr[1]++;
+					cout << "rounds played: " << arr[0] << "\t" << "Victories: " << arr[1] << "\t" << "Defeats: " << arr[2] << "\t" << "Ties: " << arr[3] << "\n\n" << endl;
+					RPS();
+				}
+				else if (playerchoice == "paper" && compchoicestr == "scissors")
+				{
+					cout << "you lose" << endl;
+					arr[0]++;
+					arr[2]++;
+					cout << "rounds played: " << arr[0] << "\t" << "Victories: " << arr[1] << "\t" << "Defeats: " << arr[2] << "\t" << "Ties: " << arr[3] << "\n\n" << endl;
+					RPS();
+				}
+
+			}
 		}
+
+		else if (playerchoice == "q" || playerchoice == "quit")
+		{
+			break;
+		}
+
+
 		else
 		{
-			if (playerchoice == "rock" && compchoicestr == "scissors")
-			{
-				cout << "you win" << endl;
-				RPS();
-			}
-			else if (playerchoice == "rock" && compchoicestr == "paper")
-			{
-				cout << "you lose" << endl;
-				RPS();
-			}
-
-			else if (playerchoice == "scissors" && compchoicestr == "rock")
-			{
-				cout << "you lose" << endl;
-				RPS();
-			}
-			else if (playerchoice == "scissors" && compchoicestr == "paper")
-			{
-				cout << "you win" << endl;
-				RPS();
-			}
-
-			else if (playerchoice == "paper" && compchoicestr == "rock")
-			{
-				cout << "you win" << endl;
-				RPS();
-			}
-			else if (playerchoice == "paper" && compchoicestr == "scissors")
-			{
-				cout << "you lose" << endl;
-				RPS();
-			}
-
+			cout << "please enter rock, paper or scissors" << endl;
+			RPS();
 		}
-
-
-
-
-
 	}
-	else
-	{
-		cout << "please enter rock, paper or scissors" << endl;
-		RPS();
-	}
+	
+	
 
 
 }
@@ -168,13 +198,13 @@ void menu()
 		}
 		else if (menucnt == "cheat_on")
 		{
-			arr[3] = "cheat_on";
+			arr[5] = 1;
 			cout << "cheats have been enabled" << endl;
 			menu();
 		}
 		else if (menucnt == "cheat_off")
 		{
-			arr[3] = "cheat_off";
+			arr[5] = 0;
 			cout << "cheats have been disabled" << endl;
 			menu();
 		}
@@ -189,15 +219,16 @@ void menu()
 }
 void setup()
 {
+	
+
 	cout << "You may press q to quit at anytime" << endl;
 	cout << "\n 1) Please enter your name: ";
-	cin >> arr[0];
-	cout << arr[0] << endl;
+	cin >> playername;
 	menu();
 }
 int main()
 {
-
+	arr[0, 1, 2, 3, 4, 5] = 0;
 	setup();//run menu code
 
 	return 0;
