@@ -31,39 +31,40 @@ int randBetween()
 		low = high;
 		high = swap;
 	}
-	//cout<<rand() % (high - low + 1) + low<<endl; //random mod high-low +1	
-	randomn = rand() % (high - low + 1) + low;
+	randomn = rand() % (high - low + 1) + low;//gets a random number between 00000000 and 99999999
 	return randomn;
 }
 
-int randmix()
+int randmix()//does a few operations to make the random number seed a bit more random
 {
 	int rndval = randBetween();
-	//cout<<"test is: "<<rndval<<endl;
-	//cout<<"time is: "<<time(NULL)<<endl;
-	int seedval = time(NULL)*rndval;
-	//cout<<"combined is: "<<seedval<<endl;
-	seedval = (seedval*time(NULL)) + rndval;
-	//cout<<seedval<<endl;
+	int seedval = time(NULL)*rndval;//multiplies time by random number
+	seedval = (seedval*time(NULL)) + rndval;//then adds the random number again
 	return seedval;
 }
 
 void endgame()
 {
-	int quit;
-	printf("%s , your final score is: \n", playername.c_str());
-	printf("Rounds played: %d \t Victories: %d \t Defeats: %d \t Ties: %d \n", arr[0], arr[1], arr[2], arr[3]);
+	string quit;
+	cout << "Do you want to display your final score?: ";
+	cin >> quit;
+	if (quit == "y" || quit == "yes")
+	{
+		printf("%s , your final score is: \n", playername.c_str());
+		printf("Rounds played: %d \t Victories: %d \t Defeats: %d \t Ties: %d \n", arr[0], arr[1], arr[2], arr[3]);
+	}
+	
 	cout << "please try again sometime" << endl;
-	Sleep(800);
-	exit(0);
+	Sleep(800);//pauses for 800 milliseconds so you can read the text
+	exit(0);//exits the program
 }
 
 void RPS()
 {
 	Sleep(1000);
-	int seedval = randmix();
+	int seedval = randmix();//gets the psuedo-random seed
 	string playerchoice;
-	srand(seedval);
+	srand(seedval);//sets the seed to the psuedo-random value
 	int compchoice = rand() % 10 +1;
 	string compchoicestr = "";
 	///begin computer choice code
@@ -100,8 +101,8 @@ void RPS()
 			if (playerchoice == compchoicestr)
 			{
 				cout << "this is what happens when an unstoppable force meets an immovable object(tie) \n" << endl;
-				arr[0]++;
-				arr[3]++;
+				arr[0]++;//adds to round count
+				arr[3]++;//adds to tie count
 				printf("%s , your current score is: \n", playername.c_str());
 				printf("Rounds played: %d \t Victories: %d \t Defeats: %d \t Ties: %d \n", arr[0], arr[1], arr[2],arr[3]);
 				RPS();
@@ -112,7 +113,7 @@ void RPS()
 				{
 					cout << "an enemies' sword is no match for the stone giant(win)" << endl;
 					arr[0]++;
-					arr[1]++;
+					arr[1]++;//adds to win count
 					printf("%s , your current score is: \n", playername.c_str());
 					printf("Rounds played: %d \t Victories: %d \t Defeats: %d \t Ties: %d \n", arr[0], arr[1], arr[2], arr[3]);
 					RPS();
@@ -121,7 +122,7 @@ void RPS()
 				{
 					cout << "you were blinded by a sheet and was unable to continue(loss)" << endl;
 					arr[0]++;
-					arr[2]++;
+					arr[2]++;//adds to lose count
 					printf("%s , your current score is: \n", playername.c_str());
 					printf("Rounds played: %d \t Victories: %d \t Defeats: %d \t Ties: %d \n", arr[0], arr[1], arr[2], arr[3]);
 					RPS();
@@ -168,9 +169,9 @@ void RPS()
 			}
 		}
 
-		else if (playerchoice == "q" || playerchoice == "quit")
+		else if (playerchoice == "q" || playerchoice == "quit")//break out of loop
 		{
-			break;
+			endgame();//quit the program
 		}
 
 
@@ -210,13 +211,13 @@ void menu()
 		{
 			break;
 		}
-		else if (menucnt == "cheat_on")
+		else if (menucnt == "cheat_on")//set cheat flag on
 		{
 			arr[5] = 1;
 			cout << "cheats have been enabled" << endl;
 			menu();
 		}
-		else if (menucnt == "cheat_off")
+		else if (menucnt == "cheat_off")//sets cheat flag off
 		{
 			arr[5] = 0;
 			cout << "cheats have been disabled" << endl;
@@ -224,14 +225,14 @@ void menu()
 		}
 		else
 		{
-			cout << "not a valid option selected" << endl;
+			cout << "not a valid option selected \n" << endl;
 			menu();
 		}
 	}
 
 
 }
-void setup()
+void setup()//ask for name once, so it doesn't ask again on menu call
 {
 	
 
