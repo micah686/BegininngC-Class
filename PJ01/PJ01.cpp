@@ -68,7 +68,11 @@ void RPS()
 	int compchoice = rand() % 10 +1;
 	string compchoicestr = "";
 	///begin computer choice code
-	if (compchoice == 1 || compchoice == -1 || compchoice == 4 || compchoice == -4 || compchoice == 7 || compchoice == -7 || compchoice == 0)
+	if (compchoice == 0)
+	{
+		RPS();
+	}
+	if (compchoice == 1 || compchoice == -1 || compchoice == 4 || compchoice == -4 || compchoice == 7 || compchoice == -7)
 	{
 		//cout << "1,4,7,0 choice:" << compchoice << endl;
 		compchoicestr = "rock";
