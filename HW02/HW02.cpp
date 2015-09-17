@@ -27,10 +27,7 @@ using namespace std;
 		else
 		{
 		    printf ("%d mod 31 is %d\n",month,month%31);   
-		}
-		 
-		
-		
+		}	
 	}
 
 
@@ -52,12 +49,13 @@ using namespace std;
 			low = high;
 			high = swap;
 		}		 
-		cout<<rand() % (high - low + 1) + low<<endl; //random mod high-low +1
+		cout<<rand() % (high - low + 1) + low<<endl; 
 		return 0;
 	}
 
 
-	float average(){
+	float average()
+	{
 		int counter = 0;
 		float grade;
 		float total = 0;
