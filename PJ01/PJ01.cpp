@@ -39,7 +39,8 @@ int randmix()//does a few operations to make the random number seed a bit more r
 {
 	int rndval = randBetween();
 	int seedval = time(NULL)*rndval;//multiplies time by random number
-	seedval = (seedval*time(NULL)) + rndval;//then adds the random number again
+	int rand2 = randBetween();
+	seedval = (seedval*time(NULL)) + rand2;//then adds the random number again
 	return seedval;
 }
 
@@ -154,7 +155,7 @@ void RPS()
 
 				else if (playerchoice == "paper" && compchoicestr == "rock")
 				{
-					cout << "your giant sheet disoriented the stone giant and led you to victory(win)" << endl;
+					cout << "your large sheet disoriented the stone giant and led you to victory(win)" << endl;
 					arr[0]++;
 					arr[1]++;
 					printf("%s , your current score is: \n", playername.c_str());
