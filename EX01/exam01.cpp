@@ -14,22 +14,23 @@ float problem01(){
 	float num2;
 	char choice;
 	float total;
-	total=0;
-	cout<<"please enter a number:";
-	cin>>num1;
-	cout<<"\nplease enter a number to multiply by: ";
-	cin>>num2;
-	cout<<"total is: "<<num1*num2<<endl;
-	total = num1*num2;//multiply the numbers together
-	cout<<"press y to continue, or q to quit \n";
-	cin>>choice;
-	if(choice=='y' )//start function again
+	int lock =0;
+	while(lock ==0)
 	{
-		problem01();
+		cout<<"please enter a number:";
+		cin>>num1;
+		cout<<"\nplease enter a number to multiply by: ";
+		cin>>num2;
+		cout<<"total is: "<<num1*num2<<endl;
+		total = num1*num2;//multiply the numbers together
+		cout<<"press y to continue, or q to quit \n";
+		cin>>choice;
+		 if(choice=='q' )
+		{
+			lock=1;//set lock to 1, breaking while loop
+			
+		}
 	}
-	else if(choice=='q' ){}//do nothing
-	
-	
 	
 	return total;
 }
