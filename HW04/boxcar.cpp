@@ -117,6 +117,12 @@ Boxcar::Boxcar(int h, int w, int l)
 	boxcars++;
 
 }
+
+Boxcar::Boxcar()
+{
+	std::cout << "Calling the destructor on " << boxcars << std::endl;
+	boxcars--;
+}
 //
 //int Book::getBookCount() {
 //	return bookCount;

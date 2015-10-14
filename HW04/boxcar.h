@@ -63,8 +63,9 @@ public:
 	static int getBoxcars();
 
 
-	Boxcar(int, int, int);
 	Boxcar();
+	Boxcar(int, int, int);
+	
 	
 
 private:

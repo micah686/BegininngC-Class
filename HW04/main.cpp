@@ -10,6 +10,7 @@
 #include <string>
 #include "Boxcar.h"
 
+using namespace std;
 #pragma region
 //int main() {
 //
@@ -40,13 +41,26 @@
 int main()
 {
 	Boxcar car01;
-	car01.setHeight(15);
-	car01.setLength(5);
-	car01.setWidth(10);
+
+	int l, w, h;
+
+	std::cout << "please enter a height, length, and width" << std::endl;
+	cin >> h;
+	cout << "\n" << endl;
+	cin >> l;
+	cout << "\n" << endl;
+	cin >> w;
+	cout << "\n" << endl;
+
+
+	car01.setHeight(h);
+	car01.setLength(l);
+	car01.setWidth(w);
 
 	std::cout << "height is: " << car01.getHeight() << std::endl;
 	std::cout << "length is: " << car01.getLength() << std::endl;
 	std::cout << "width is: " << car01.getWidth() << std::endl;
+	cout << "car01 has serial number:  #" << car01.getSerialNumber() << endl;
 	
 
 	
