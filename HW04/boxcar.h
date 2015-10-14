@@ -57,17 +57,24 @@ public:
 	int getWidth();
 	void setLength(int);
 	int getLength();
+	void setHeight(int);
+	int getHeight();
+	static int getSerialNumber();
 	static int getBoxcars();
 
+
+	Boxcar(int, int, int);
 	Boxcar();
-	Boxcar(int, int);
-	//~Boxcar();
+	
 
 private:
 	static int boxcars;
+	static int SerialNumber;
 	int width;
 	int length;
+	int height;
 };
+
 
 //Boxcar::Boxcar()
 //{

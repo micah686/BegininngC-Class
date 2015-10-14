@@ -1,7 +1,7 @@
 /*=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-*Author:
+*Author:Micah King
 *Date:
-*Description:
+*Description: Boxcar class
 *
 =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=*/
 
@@ -39,6 +39,16 @@
 #pragma endregion old_main
 int main()
 {
-	Boxcar * car1 = new Boxcar;
+	Boxcar car01;
+	car01.setHeight(15);
+	car01.setLength(5);
+	car01.setWidth(10);
+
+	std::cout << "height is: " << car01.getHeight() << std::endl;
+	std::cout << "length is: " << car01.getLength() << std::endl;
+	std::cout << "width is: " << car01.getWidth() << std::endl;
+	
+
+	
 	
 }
