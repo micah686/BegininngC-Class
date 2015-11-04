@@ -67,7 +67,7 @@ public:
 	Boxcar(int, int, int);
 	
 	
-
+	
 private:
 	static int boxcars;
 	static int SerialNumber;

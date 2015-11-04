@@ -70,6 +70,7 @@
 
 
 int Boxcar::boxcars = 0;
+int Boxcar::SerialNumber = 0;
 
 void Boxcar::setHeight(int h)
 {
