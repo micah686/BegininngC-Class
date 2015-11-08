@@ -32,9 +32,22 @@ void read_numbers_from_file()
 }
 
 
+void test()
+{
+	ofstream myfile;
+	myfile.open("blerg.txt");
+}
 
-
-
+void multiples()
+{
+	int sum = 0;//set initial sum to zero
+	for (int i = 0; i < 1000; i++)
+	{
+		if (i % 3 == 0 || i % 5 == 0)//if the multiple is 3 or 5
+			sum = sum + i; //set sum equals to current sum plus multiple
+	}
+	cout << sum;
+}
 
 
 
@@ -42,14 +55,17 @@ void read_numbers_from_file()
 
 int main(int argc, char *arg[]){
 
+	multiples();
 	//read_numbers_from_file();
-	Convert * test = new Convert();
+	//Convert * test = new Convert();
 	//test->setCtf(50);
 	//cout << "celcius to farenheight is: " << test->getCtf()<<endl;
 	//test->setCtk(-50);
 	//cout << "kelvin is: " << test->getCtk() << endl;
-	test->setFtk(50);
-	cout << "kelvin is: " << test->getFtk() << endl;
+	//test->setFtk(50);
+	//cout << "kelvin is: " << test->getFtk() << endl;
+	//test->setYtFI(15);
+	//cout << "values are: " << test->getYtFI();
 
 
 

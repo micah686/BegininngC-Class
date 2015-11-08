@@ -77,7 +77,7 @@ public:
 	double getKtm();
 	double getKtc();
 
-
+	
 	double getYtFI();
 	double getKtMC();
 

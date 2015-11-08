@@ -171,9 +171,17 @@ double Convert::getKtc()
 
 double Convert::getYtFI()
 {
+	
+	
 	double arr[2];
 	arr[0] = ytFI * 3;
 	arr[1] = ytFI * 36;
+
+	
+
+
+
+
 	return arr[0];
 }
 
