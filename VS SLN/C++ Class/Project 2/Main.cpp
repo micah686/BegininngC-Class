@@ -26,6 +26,7 @@ void read_numbers_from_file()
 			linenumber = std::stoi(line);
 			test = test + linenumber;
 		}
+		cout << test +"\n";
 	}
 	else {
 		cout << "Couldn't open the file...";

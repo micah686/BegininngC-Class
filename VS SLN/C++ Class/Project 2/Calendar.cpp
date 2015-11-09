@@ -329,6 +329,17 @@ void Calendar::Day_calc()
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
 void Calendar::Cal_Code()
 {
 	int days_in_month[] = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };

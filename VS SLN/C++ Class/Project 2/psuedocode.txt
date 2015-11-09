@@ -1,0 +1,55 @@
+Psuedocode:
+1)read numbers from file
+start ifstream
+use ifstream to open file
+if the file is open
+have integer equal integer plus linenumber
+
+
+2)conversions
+for header:
+	create the variables, getters and setters
+	use doubles to handle decimals
+for the .cpp
+	set up the setters
+	for getters:
+		look up conversion formulas online
+		have the getters return the double variable while applying the formulas
+
+
+
+
+
+3)Get sum of multiples
+create sum integer
+for loop while variable is less than 1000
+nested if statement checks modulus 3 or modulus 5
+appends value to sum
+
+
+
+4)calendar
+header:
+	create integers for day, month, and year
+	create strings for day of week, month, and full date
+	create setters and getters
+	create void functions to do manipulation
+calendar.cpp
+	create setters and getters
+	setters:
+		after setting the value, run the appropriate functions(set_day should run code to find the day of the week, and also check the value for errors)
+	getters:
+the get date function should print out the day, month, year, and day of the week
+
+seperate functions:
+	the check_day function
+		go by month. if the value is less than 1 or greater than the last day in the month, then print out invalid date or similar
+	the check_month function
+		if the string month matches, set the private integer month as a number(like 12 for december)
+	the day_of_week function
+		create a string array with the days of the week
+		create temporary int for day month and year
+		create an integer for the complicated formula to calculate what day of the week it is on
+		use if statements for 1-7
+		set the day of the week string equal to the array with the int from earlier as the index(so like days_of_the_week[integer_from_calculation])
+		
