@@ -3,6 +3,7 @@
 #include <string>
 #include <windows.h>
 #include "Conversion.h"
+#include "Calendar.h"
 
 using namespace std;
 
@@ -53,9 +54,18 @@ void multiples()
 
 
 
+
+
+
+
+
 int main(int argc, char *arg[]){
 
-	multiples();
+	
+	Calendar * bleh = new Calendar();
+	bleh->set_month("Marcfh");
+
+
 	//read_numbers_from_file();
 	//Convert * test = new Convert();
 	//test->setCtf(50);
