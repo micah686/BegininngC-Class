@@ -15,8 +15,9 @@ private:
 
 
 	int day;
-	int first_day_of_month;
+	std::string day_of_week = "";
 	std::string month = "";
+	int month_int;
 	int year;
 	std::string full_date = "";
 
@@ -44,6 +45,7 @@ public:
 
 	//my getters
 	double getCtf();
+	std::string Get_date();
 
 
 	
@@ -54,7 +56,9 @@ public:
 
 	//////////working function
 	void Cal_Code();
-
+	void Month_Check();
+	void Day_calc();
+	void Day_Check();
 
 
 

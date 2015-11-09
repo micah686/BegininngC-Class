@@ -63,7 +63,10 @@ int main(int argc, char *arg[]){
 
 	
 	Calendar * bleh = new Calendar();
-	bleh->set_month("Marcfh");
+	bleh->set_month("January");
+	bleh->set_day(1);
+	bleh->set_year(2015);
+	bleh->Get_date();
 
 
 	//read_numbers_from_file();
