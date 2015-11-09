@@ -22,7 +22,7 @@ private:
 	std::string full_date = "";
 
 
-	double ctf;
+	
 
 
 public:
@@ -30,7 +30,7 @@ public:
 
 
 	//my setters
-	void setCtf(double);
+	
 
 	void set_day(int);
 	void set_month(std::string);
@@ -44,7 +44,7 @@ public:
 
 
 	//my getters
-	double getCtf();
+	
 	std::string Get_date();
 
 

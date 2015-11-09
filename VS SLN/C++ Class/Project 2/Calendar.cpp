@@ -25,10 +25,7 @@ SETTERS
 
 
 /////////
-void Calendar::setCtf(double c)
-{
-	ctf = c;
-}
+
 
 
 
@@ -44,7 +41,7 @@ void Calendar::set_day(int d)
 {
 	
 	day = d;
-	Day_Check();
+	//Day_Check();
 	Day_calc();
 }
 
@@ -67,10 +64,6 @@ Getters
 
 
 ////////
-double Calendar::getCtf()
-{
-	return (ctf*1.8) + 32;
-}
 
 std::string Calendar::Get_date()
 {
@@ -271,37 +264,41 @@ void Calendar::Day_calc()
 	int m = month_int;
 	int y = year - 2000;
 	int c = 2000;
-	int foo = (d + m + y + (y / 4) + c) % 7;
+	
+	int foo = (d + y + y / 4 - y / 100 + y / 400 + (31 * m / 12)) & 7;
+	foo = foo - 1;
+	/*int foo = (d + m + y + (y / 4) + c) % 7;*/
 
-	cout << "foo is: " + foo;
+	///cout << "foo is: " + days[foo];
+
 
 	if (foo == 1)
 	{
-		month = days[foo];
+		day_of_week = days[foo];
 	}
 	else if (foo == 2)
 	{
-		month = days[foo];
+		day_of_week = days[foo];
 	}
 	else if (foo==3)
 	{
-		month = days[foo];
+		day_of_week = days[foo];
 	}
 	else if (foo == 4)
 	{
-		month = days[foo];
+		day_of_week = days[foo];
 	}
 	else if (foo == 5)
 	{
-		month = days[foo];
+		day_of_week = days[foo];
 	}
 	else if (foo == 6)
 	{
-		month = days[foo];
+		day_of_week = days[foo];
 	}
 	else if (foo == 7)
 	{
-		month = days[foo];
+		day_of_week = days[foo];
 	}
 }
 
