@@ -41,6 +41,7 @@ using namespace std;
 int main()
 {
 	Boxcar car01;
+	Tank_car tank01;
 
 	int l, w, h;
 	double r;
@@ -64,8 +65,9 @@ int main()
 	//std::cout << "length is: " << car01.getLength() << std::endl;
 	//std::cout << "width is: " << car01.getWidth() << std::endl;
 	//cout << "car01 has serial number:  #" << car01.getSerialNumber() << endl;
-	Tank_car tank01;
+	
 	tank01.setRadius(r);
+	tank01.TanksetLength(l);
 	cout << "the tank volume is: " << tank01.getVolume() << endl;
 	
 

@@ -55,7 +55,10 @@ void Tank_car::setRadius(double r)
 	radius = r;
 }
 
-
+void Tank_car::TanksetLength(int l)
+{
+	length = l;
+}
 
 double Tank_car::getVolume()
 {
@@ -63,6 +66,8 @@ double Tank_car::getVolume()
 	
 	return PI*length*(radius * 2);
 }
+
+
 
 
 

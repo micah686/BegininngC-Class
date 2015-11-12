@@ -47,6 +47,7 @@ class Tank_car: public Boxcar
 {
 public:
 	double getVolume();
+	void TanksetLength(int);
 	void setRadius(double);
 
 private:
