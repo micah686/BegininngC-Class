@@ -26,13 +26,11 @@ public:
 };
 inline shapeMaker::shapeMaker()
 {
-	std::cout << "default";
 }
 
 inline shapeMaker::shapeMaker(std::string filename)
 {
 	filen = filename;
-	std::cout << "custome";
 	writer(filen);
 
 }
@@ -49,7 +47,7 @@ protected:
 
 public:
 	stringer();
-	stringer(std::string);
+	stringer(std::string);//for creating the text document
 	std::string task(std::string line, std::string word);
 
 	stringer(std::string, std::string);

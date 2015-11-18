@@ -28,9 +28,9 @@ int main(int argc, char *arg[]) {
 	//this line will print to the terminal so you can check your progress
 	//std::cout << m.task(7, '*') << std::endl;
 	//these lines will print to a file.
-	//m.task(7, '*');
-	m.writer(m.task(7, '*'));
-	m.writer(m.task(1, '^'));
+	m.task(7, '*');
+	//m.writer(m.task(7, '*'));
+	//m.writer(m.task(1, '^'));
 
 	//this line will print to the terminal so you can check your progress
 	

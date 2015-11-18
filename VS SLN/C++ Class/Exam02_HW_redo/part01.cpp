@@ -10,7 +10,7 @@ void shapeMaker::writer(std::string fn)
 
 	
 	std::ofstream myfile;
-	myfile.open(filen, std::ofstream::app);
+	myfile.open(filen, std::ofstream::app);//append file contents
 	myfile << linen << "\n";
 	myfile.close();
 	//std::cin.get();
@@ -18,7 +18,8 @@ void shapeMaker::writer(std::string fn)
 
 std::string shapeMaker::task(int count, char var)
 {
-	std::string line_string = std::to_string(var);//var is being pulled from memory, I need to fix this
+	std::string line_string = std::to_string(var);//var is being pulled from memory, I need to fix this, not sure how though
+	//var is being shown as a 2 digit number, then a char, for example var = 92 '*'
 	for (int i = 0; i < count; i++)
 	{
 		linen += line_string;
@@ -38,7 +39,7 @@ stringer::stringer(std::string filename)
 {
 	filen = filename;
 	std::ofstream myfile2;
-	myfile2.open(filen, std::ofstream::app);
+	myfile2.open(filen, std::ofstream::app);//creates the simple file
 	myfile2.close();
 
 
@@ -55,11 +56,11 @@ std::string stringer::task(std::string line, std::string word)
 	std::string text = line;
 	std::string sub = word;
 
-	std::string::size_type i = text.find(sub);
+	std::string::size_type i = text.find(sub);//position of the word to remove
 
-	if (i != std::string::npos)
+	if (i != std::string::npos)//if it is NOT at the end of the string
 	{
-		text.erase(i, sub.length());
+		text.erase(i, sub.length());//erase starting at position, and continuing the length of the string
 	}
 	myfile << text << "\n" << std::endl;
 	myfile.close();
