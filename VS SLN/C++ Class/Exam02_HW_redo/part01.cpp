@@ -8,7 +8,7 @@
 void shapeMaker::writer(std::string fn)
 {
 
-	std::cout << filen;
+	
 	std::ofstream myfile;
 	myfile.open(filen, std::ofstream::app);
 	myfile << linen << "\n";
@@ -44,7 +44,24 @@ std::string shapeMaker::task(int count, char var)
 //	 return linen;
 // }
 
+std::string stringer::task(std::string line, std::string word)
+{
 
+	std::string text = line;
+	std::string sub = word;
+
+	std::string::size_type i = text.find(sub);
+
+	if (i != std::string::npos)
+	{
+		text.erase(i, sub.length());
+	}
+
+	
+	
+
+	return text;
+}
 
 
 

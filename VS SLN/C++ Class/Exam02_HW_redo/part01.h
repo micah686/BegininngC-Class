@@ -37,6 +37,32 @@ inline shapeMaker::shapeMaker(std::string filename)
 
 }
 
+
+
+
+
+class stringer
+{
+protected:
+	std::string filen;
+	std::string linen;
+
+public:
+	stringer();
+	std::string task(std::string line, std::string word);
+
+	stringer(std::string, std::string);
+
+};
+
+inline stringer::stringer()
+{
+
+}
+
+
+
+
 //inline void shapeMaker::writer(std::string)
 //{
 //}
