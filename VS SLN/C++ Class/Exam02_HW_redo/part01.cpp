@@ -8,12 +8,41 @@
 void shapeMaker::writer(std::string fn)
 {
 
-	std::cout << sm;
+	std::cout << filen;
 	std::ofstream myfile;
-	myfile.open(sm);
+	myfile.open(filen, std::ofstream::app);
+	myfile << linen << "\n";
+	myfile.close();
 	std::cin.get();
 }
 
+std::string shapeMaker::task(int count, char var)
+{
+	std::string line_string = std::to_string(var);//var is being pulled from memory, I need to fix this
+	for (int i = 0; i < count; i++)
+	{
+		linen += line_string + "\n";
+	}
+
+
+	return linen;
+}
+
+
+
+
+
+
+//shapeMaker::task(int count, char line_string)
+// {
+//	 
+//	 for (int i = 0; i < count; i++)
+//	 {
+//		 linen += line_string + "\n";
+//	 }
+//
+//	 return linen;
+// }
 
 
 

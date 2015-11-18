@@ -9,7 +9,8 @@
 class shapeMaker
 {
 protected:
-	std::string sm;
+	std::string filen;
+	std::string linen;
 
 public:
 
@@ -18,6 +19,8 @@ public:
 	explicit shapeMaker(std::string);
 
 	void writer(std::string);
+
+	std::string task(int count, char var);
 
 
 };
@@ -28,9 +31,9 @@ inline shapeMaker::shapeMaker()
 
 inline shapeMaker::shapeMaker(std::string filename)
 {
-	sm = filename;
+	filen = filename;
 	std::cout << "custome";
-	writer(sm);
+	writer(filen);
 
 }
 
