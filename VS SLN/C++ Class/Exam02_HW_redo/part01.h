@@ -38,7 +38,7 @@ inline shapeMaker::shapeMaker(std::string filename)
 }
 
 
-
+/////////////stringer//////////////////
 
 
 class stringer
@@ -49,6 +49,7 @@ protected:
 
 public:
 	stringer();
+	stringer(std::string);
 	std::string task(std::string line, std::string word);
 
 	stringer(std::string, std::string);
@@ -59,6 +60,7 @@ inline stringer::stringer()
 {
 
 }
+
 
 
 

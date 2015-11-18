@@ -24,16 +24,17 @@ int main(int argc, char *arg[]) {
 	calling shapeMaker or stringer with a filename will store the filename and use it for writing.
 	*/
 	shapeMaker m("exam02_shapes.txt");
-	//stringer s("exam02_string.txt");
+	stringer s("exam02_string.txt");
 	//this line will print to the terminal so you can check your progress
 	//std::cout << m.task(7, '*') << std::endl;
 	//these lines will print to a file.
 	//m.task(7, '*');
-	m.writer(m.task(7, '*'));
+	//m.writer(m.task(7, '*'));
 	//m.writer(m.task(1, '^'));
 
 	//this line will print to the terminal so you can check your progress
-	//std::cout << s.task("the fish was delish", "fish") << std::endl;
+	
+	std::cout << s.task("the fish was delish", "fish") << std::endl;
 	//these lines will print to a file.
 	//s.writer(s.task("the fish was delish", "fish"));
 	//s.writer(s.task("there are six words in this sentance", "six"));

@@ -31,21 +31,25 @@ std::string shapeMaker::task(int count, char var)
 
 
 
+///////////////stringer///////////////////
+
+stringer::stringer(std::string filename)
+{
+	filen = filename;
+	std::ofstream myfile2;
+	myfile2.open(filen, std::ofstream::app);
+	myfile2.close();
 
 
-//shapeMaker::task(int count, char line_string)
-// {
-//	 
-//	 for (int i = 0; i < count; i++)
-//	 {
-//		 linen += line_string + "\n";
-//	 }
-//
-//	 return linen;
-// }
+}
 
 std::string stringer::task(std::string line, std::string word)
 {
+	std::ofstream myfile;
+	myfile.open(filen, std::ofstream::app);
+
+
+
 
 	std::string text = line;
 	std::string sub = word;
@@ -56,7 +60,8 @@ std::string stringer::task(std::string line, std::string word)
 	{
 		text.erase(i, sub.length());
 	}
-
+	myfile << text << "\n" << std::endl;
+	myfile.close();
 	
 	
 
