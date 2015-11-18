@@ -5,10 +5,15 @@
 #include "part01.h"
 
 
-void shapeMaker::writer()
+void shapeMaker::writer(std::string fn)
 {
 
+	std::cout << sm;
+	std::ofstream myfile;
+	myfile.open(sm);
+	std::cin.get();
 }
+
 
 
 
@@ -52,4 +57,5 @@ void shapeMaker::writer()
 //	return test_str;
 //	
 //}
+
 

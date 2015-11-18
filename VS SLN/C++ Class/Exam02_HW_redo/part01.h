@@ -9,33 +9,37 @@
 class shapeMaker
 {
 protected:
-	void writer();
-public:
 	std::string sm;
 
+public:
+
 	shapeMaker();
-	shapeMaker(std::string);
-	/*~shapeMaker();*/
 
-	//void writer(std::string);
+	explicit shapeMaker(std::string);
 
-private:
+	void writer(std::string);
+
 
 };
-
-shapeMaker::shapeMaker()//default constructor
+inline shapeMaker::shapeMaker()
 {
+	std::cout << "default";
 }
 
-shapeMaker::shapeMaker(std::string)//parametrized constructor
+inline shapeMaker::shapeMaker(std::string filename)
 {
-	void writer(std::string);
+	sm = filename;
+	std::cout << "custome";
+	writer(sm);
+
 }
 
-
-//shapeMaker::~shapeMaker()//default destructor
+//inline void shapeMaker::writer(std::string)
 //{
 //}
+
+
+
 
 
 
